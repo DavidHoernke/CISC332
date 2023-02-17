@@ -49,7 +49,7 @@ CREATE TABLE Restaurant (
     CustomerEmail varchar(100),
     employeeID integer,
     orderID integer,
-    FOREIGN KEY(CustomerEmail) REFERENCES customer(email) CAS,
+    FOREIGN KEY(CustomerEmail) REFERENCES customer(email),
     FOREIGN KEY(employeeID) REFERENCES employee(ID),
     FOREIGN KEY(orderID) REFERENCES orders(ID)
 );  
@@ -101,7 +101,7 @@ CREATE TABLE management (
 
 CREATE TABLE Account(
     Credit decimal(10,2),
-    date varchar(9),
+    date date,
     paymentMade varchar(10),
     CustomerEmail varchar(100) not null,
     primary key (CustomerEmail,date,paymentMade),
@@ -243,9 +243,9 @@ INSERT INTO item(itemName, itemPrice, restaurantName) VALUES
     ('Sweet and Sour Pork', 11.99, 'Chinese Cuisine');
 
 INSERT INTO  Account(Credit,date,paymentMade,CustomerEmail)
-VALUES (123.32,1/12/21,100,'johndoe@example.com'),
-        (113.32,2/3/21,100,'janedoe@example.com'),
-        (124.32,5/4/21,100,'bobsmith@example.com'),
-        (23.32,3/23/21,100,'robertgreen@example.com'),
-        (3.32,2/12/21,100,'sarahlee@example.com'),
-        (13.2,2/21/21,100,'peterbrown@example.com');
+VALUES (123.32,'2022-01-23',100,'johndoe@example.com'),
+        (113.32,'2022-01-23',100,'janedoe@example.com'),
+        (124.32,'2022-01-23',100,'bobsmith@example.com'),
+        (23.32,'2022-01-23',100,'robertgreen@example.com'),
+        (3.32,'2022-01-23',100,'sarahlee@example.com'),
+        (13.2,'2022-01-23',100,'peterbrown@example.com');
